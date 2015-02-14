@@ -15,9 +15,5 @@
 	"permissions": [
 		"storage"
 	],
-	"content_scripts": [
-		{
-		"matches":["<all_urls>"],
-		"js":["simple.js"]
-		}]
+	"background":["background.html"]
 }
