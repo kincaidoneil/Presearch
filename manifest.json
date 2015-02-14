@@ -1,7 +1,7 @@
 {
 	"name": "Bookmarking Test",
 	"author": "Furqan and Kincaid",
-	"description": "Insert description",
+	"description": "The bookmark app for all your needs",
 	"version": "0.1",
 	"manifest_version": 2,
 	"browser_action": {
