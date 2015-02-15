@@ -8,8 +8,8 @@ $(document).ready(function() {
 		position: 'right',
 		interactive: true,
 		functionInit: function(origin, content) {
-			// $(origin).attr('href')
-			// return content;
+			content= $(origin).attr('href')
+			return content;
 		}
 	});
 	
