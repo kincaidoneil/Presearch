@@ -1,7 +1,7 @@
 {
 	"name": "Bookmarking Test",
 	"author": "Furqan and Kincaid",
-	"description": "The bookmark app for all your needs",
+	"description": "The best thing, since, well, things became a thing.",
 	"version": "0.1",
 	"manifest_version": 2,
 	"browser_action": {
@@ -20,13 +20,15 @@
 		{
 			"matches": ["http://*/*", "https://*/*"],
 			"js": [
-				"inject/js/jquery.min.js",
-				"inject/js/jquery.tooltipster.min.js",
-				"inject/js/tooltip.js",
-				"inject/js/handlebars-v3.0.0.js"
+				"vendor/jquery/jquery.min.js",
+				"vendor/tooltipster/jquery.tooltipster.min.js",
+				"vendor/mustache/mustache.min.js",
+				"js/tooltip.js"
 			],
 			"css" : [
-				"inject/css/tooltipster.css"
+				"vendor/tooltipster/tooltipster.css",
+				"vendor/tooltipster/tooltipster-shadow.css",
+				"css/tooltip.css"
 			]
 		}
 	]

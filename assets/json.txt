@@ -1,1 +1,0 @@
-{"name":"files","type":"folder","path":"files","items":[{"name":"dir1","type":"folder","path":"files\/dir1","items":[{"name":"file1","type":"file","path":"files\/dir1\/file1","size":5},{"name":"file2","type":"file","path":"files\/dir1\/file2","size":7}]},{"name":"file1","type":"file","path":"files\/file1","size":12},{"name":"file2","type":"file","path":"files\/file2","size":12}]}

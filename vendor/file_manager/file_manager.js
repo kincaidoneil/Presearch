@@ -1,5 +1,3 @@
-//alert("testsalfkajsd;lfkjas;dflkjas;dlfkja");
-
 $(function(){
 
 	var filemanager = $('.filemanager'),
@@ -388,6 +386,16 @@ $(function(){
 		}
 
 	}
+	
+	chrome.runtime.onMessage.addListener(
+	  function(request, sender, sendResponse) {
+	    console.log(sender.tab ?
+	                "from a content script:" + sender.tab.url :
+	                "from the extension");
+	    // if (request.greeting == "hello")
+	    //   sendResponse({farewell: "goodbye"});
+	  });
+	
 	// Get json_data somehow...
 	process({"name":"files","type":"folder","path":"files","items":[{"name":"science",
 		"type":"folder","path":"files\/science","items":[{"name":"file1","type":"file",
@@ -395,4 +403,8 @@ $(function(){
 		"type":"file","path":"http://www.nature.com","baseurl":"www.nature.com"}]},
 		{"name":"file1","type":"file","path":"http://www.mit.edu","baseurl":"www.mit.edu"},
 		{"name":"file2","type":"file","path":"http://www.umn.edu","baseurl":"www.umn.edu"}]});
+	
+	// Cuz the animations weren't working
+	$('.data').css({display: 'block'});
+	
 });
