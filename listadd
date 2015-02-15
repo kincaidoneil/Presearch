@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8" />
+
+
+		<title>jQuery Impromptu with PureCSS</title>
+
+
+		<meta name="Description" content="jQuery Impromptu theme with twitter bootstrap." />
+
+		<meta name="Keywords" content="jquery, impromptu, prompt, twitter, bootstrap" />
+
+		
+		<link rel="stylesheet" media="all" type="text/css" href="../themes/base.css" />
+		
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css" />
+
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+		<script type="text/javascript" src="../jquery-impromptu.js"></script>
+		<script type="text/javascript">
+
+			function openprompt(){
+
+
+				var n = 4;
+
+				var ar = ['lol', 'lol1', 'lol2', 'lol3']
+
+				var x = "", i;
+
+				x = x + '<label><select name="list" multiple>';
+
+				x = x + '<option value="' + ar[0] + '" selected>' + ar[0] + '</option>';
+
+
+				for (i = 1; i< n; i++) {
+
+					x = x + '<option value="' + ar[i] + '">' + ar[i] + '</option>';
+
+				}
+
+
+				var temp = {
+
+					state0: {
+
+						title: 'Choose List',
+
+						html: '<label><select name="list" multiple><option value="lol" selected>lol</option><option value="lol1">lol1</option><option value="lol2">lol2</option><option value="lol3">lol3</option></select></label>',
+
+						buttons: { Cancel: -1, AddNew: 1, Next: 0 },
+
+						focus: 1,
+
+						submit:function(e,v,m,f){ 
+
+							if(v==-1)
+								$.prompt.close()
+
+							else if(v==0) {
+
+								$.prompt.goToState('state2')
+
+								return false; }
+
+							else if(v==1) {
+
+								$.prompt.goToState('state1', true);//go forward
+
+								return false; }
+
+
+						}
+
+					},
+
+					state1: {
+
+						html: '<label>List Title: <input type="text" name="ltitle" value=""></label><br />',
+
+						buttons: {Back: 0, Next: 1 },
+
+						focus: 1,
+
+						submit:function(e,v,m,f){
+
+							e.preventDefault();
+
+							if(v==0)
+
+								$.prompt.goToState('state0')
+
+							else if(v==1)
+
+								$.prompt.goToState('state2');//go forward
+
+							return false; 
+
+						}
+
+					},
+
+					state2: {
+
+						title: 'Include Message (optional)',
+
+						html:'<p>If you would like, include a message that will be stored with the link:</p><div class="field"><textarea class="pure-input-1" id="rate_comments" name="rate_comments"></textarea></div>',
+
+						buttons: {Cancel: 0, Back: -1, Finish: 1 },
+
+						focus: 2,
+
+						submit:function(e,v,m,f){
+ 
+							if(v==0)
+ 
+								$.prompt.close()
+
+							else if(v==1)
+								return true; //we're done
+
+							else if(v==-1)
+
+								$.prompt.goToState('state0')
+
+
+							return false; 
+
+						}
+
+					}
+
+				}
+
+				
+				$.prompt(temp,{
+
+					close: function(e,v,m,f){
+
+						if(v !== undefined){
+
+							var str = "You can now process with this given information:<br />";
+
+							$.each(f,function(i,obj){
+
+								str += i + " - <em>" + obj + "</em><br />";
+
+							});
+	
+							$('#results').html(str);
+
+							window.close();
+
+						}
+
+					},
+
+					classes: {
+
+						box: '',
+
+						fade: '',
+
+						prompt: '',
+
+						close: '',
+
+						title: 'lead',
+
+						message: 'pure-form',
+
+						buttons: '',
+
+						button: 'pure-button',
+
+						defaultButton: 'pure-button-primary'
+
+					}
+
+				});
+
+			}
+
+		</script>
+
+		<script type="text/javascript">
+					chrome.runtime.onMessage.addListener(
+ 					 function(request, sender, sendResponse) {
+   				 	console.log("message received");
+					console.log(sender.tab ?
+                			"from a content script:" + sender.tab.url :
+                			"from the extension");
+    	if (request.greeting == "ourthing"){
+	openprompt();
+	sendResponse("this is a response");
+	console.log("response sent.");}
+  });
+		</script>
+	</head>
+
+	<body>
+
+		<a href="javascript:openprompt()">Click Here!</a>
+
+		<div id="results"></div>
+
+	</body>
+</html>
