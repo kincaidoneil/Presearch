@@ -9,7 +9,11 @@ $(document).ready(function() {
 		interactive: true,
 		interactiveTolerance: 150;
 		functionInit: function(origin, content) {
-			content= $(origin).attr('href')
+			content="";
+			if($(origin).attr('title')!=undefined){
+				content+="Title: "+$(origin).attr('title');
+			}
+			content+="url: "+ $(origin).attr('href')
 			return content;
 		}
 	});
