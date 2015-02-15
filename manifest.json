@@ -9,8 +9,8 @@
 		"default_popup": "popup.html"
 	},
 	"icons": {
-		"48": "icon-48.png",
-		"128": "icon-128.png"
+		"48": "icons/icon-48.png",
+		"128": "icons/icon-128.png"
 	},
 	"permissions": [
 		"storage",
@@ -20,12 +20,13 @@
 		{
 			"matches": ["http://*/*", "https://*/*"],
 			"js": [
-				"js/jquery.min.js",
-				"js/jquery.tooltipster.min.js",
-				"js/tooltip.js"
+				"inject/js/jquery.min.js",
+				"inject/js/jquery.tooltipster.min.js",
+				"inject/js/tooltip.js",
+				"inject/js/handlebars-v3.0.0.js"
 			],
 			"css" : [
-				"css/tooltipster.css"
+				"inject/css/tooltipster.css"
 			]
 		}
 	]
