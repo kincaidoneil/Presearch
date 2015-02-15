@@ -5,14 +5,29 @@
 	"version": "0.1",
 	"manifest_version": 2,
 	"browser_action": {
-		"default_icon": "icon-48.png",
+		"default_icon": "icons/icon-48.png",
 		"default_popup": "popup.html"
 	},
 	"icons": {
-		"48": "icon-48.png",
-		"128": "icon-128.png"
+		"48": "icons/icon-48.png",
+		"128": "icons/icon-128.png"
 	},
 	"permissions": [
-		"storage"
+		"storage",
+		"tabs"
+	],
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": [
+				"inject/js/jquery.min.js",
+				"inject/js/jquery.tooltipster.min.js",
+				"inject/js/tooltip.js",
+				"inject/js/handlebars-v3.0.0.js"
+			],
+			"css" : [
+				"inject/css/tooltipster.css"
+			]
+		}
 	]
 }
