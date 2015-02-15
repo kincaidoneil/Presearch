@@ -1,3 +1,5 @@
+//alert("testsalfkajsd;lfkjas;dflkjas;dlfkja");
+
 $(function(){
 
 	var filemanager = $('.filemanager'),
@@ -387,5 +389,10 @@ $(function(){
 
 	}
 	// Get json_data somehow...
-	process({"name":"files","type":"folder","path":"files","items":[{"name":"science","type":"folder","path":"files\/science","items":[{"name":"file1","type":"file","path":"http://www.google.com","baseurl":"www.google.com"},{"name":"file2","type":"file","path":"http://www.nature.com","baseurl":"www.nature.com"}]},{"name":"file1","type":"file","path":"http://www.mit.edu","baseurl":"www.mit.edu"},{"name":"file2","type":"file","path":"http://www.umn.edu","baseurl":"www.umn.edu"}]});
+	process({"name":"files","type":"folder","path":"files","items":[{"name":"science",
+		"type":"folder","path":"files\/science","items":[{"name":"file1","type":"file",
+		"path":"http://www.google.com","baseurl":"www.google.com"},{"name":"file2",
+		"type":"file","path":"http://www.nature.com","baseurl":"www.nature.com"}]},
+		{"name":"file1","type":"file","path":"http://www.mit.edu","baseurl":"www.mit.edu"},
+		{"name":"file2","type":"file","path":"http://www.umn.edu","baseurl":"www.umn.edu"}]});
 });
