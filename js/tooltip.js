@@ -28,16 +28,20 @@ $(document).ready(function() {
 			};
 			// Set content of tooltip.
 			return Mustache.render(template, data);
+		},
+		functionBefore: function(origin,continueTooltip){
+			continueTooltip();
+		
+	$('#addButton').click(function(){
+				console.log("click recognized");
+  		 		chrome.runtime.sendMessage({greeting: "ourthing"},function(response){
+				console.log("message sent.");
+				});
+	});
 		}
 	});
-	
-	// *** NOT QUITE WORKING
-	
-	$('#addButton').on('click', function(event) {
-		console.log('hello');
-		chrome.runtime.sendMessage({addLink: data}, function(response) {
-			// I don't really know what to do here
-		});
+
 	});
+	
 	
 });
