@@ -401,6 +401,8 @@ $(function(){
 		"type":"folder","path":"files\/science","items":[{"name":"file1","type":"file",
 		"path":"http://www.google.com","baseurl":"www.google.com"},{"name":"file2",
 		"type":"file","path":"http://www.nature.com","baseurl":"www.nature.com"}]},
+		{"name":"math","type":"folder","path":"files\/math,","items":[{"name":"file4",
+		"type":"file","path":"http://www.thingiverse.com","baseurl":"www.thingiverse.com"}]},
 		{"name":"file1","type":"file","path":"http://www.mit.edu","baseurl":"www.mit.edu"},
 		{"name":"file2","type":"file","path":"http://www.umn.edu","baseurl":"www.umn.edu"}]});
 	
