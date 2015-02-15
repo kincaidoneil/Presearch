@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	var data = {};
+	
 	$('a').tooltipster({
 		arrow: true,
 		contentAsHTML: true,
@@ -11,21 +13,31 @@ $(document).ready(function() {
 		functionInit: function(origin, content) {
 			// Create template for tooltip.
 			var template = '<div class="tooltip">\
-				<h2>[Insert title]<\/h2>\
+				<h2>{{title}}<\/h2>\
 				<a href="{{url}}">\
 					<h4>Visit Page<\/h4>\
 				<\/a>\
-				<a>\
+				<a id="addButton">\
 					<h4>Add to List<\/h4>\
 				<\/a>\
 			<\/div>';
 			// Set live data-bindings.
-			var data = {
+			data = {
+				title: 'Hello world!',
 				url: $(origin).attr('href')
 			};
 			// Set content of tooltip.
 			return Mustache.render(template, data);
 		}
+	});
+	
+	// *** NOT QUITE WORKING
+	
+	$('#addButton').on('click', function(event) {
+		console.log('hello');
+		chrome.runtime.sendMessage({addLink: data}, function(response) {
+			// I don't really know what to do here
+		});
 	});
 	
 });

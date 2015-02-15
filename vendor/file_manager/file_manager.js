@@ -386,6 +386,16 @@ $(function(){
 		}
 
 	}
+	
+	chrome.runtime.onMessage.addListener(
+	  function(request, sender, sendResponse) {
+	    console.log(sender.tab ?
+	                "from a content script:" + sender.tab.url :
+	                "from the extension");
+	    // if (request.greeting == "hello")
+	    //   sendResponse({farewell: "goodbye"});
+	  });
+	
 	// Get json_data somehow...
 	process({"name":"files","type":"folder","path":"files","items":[{"name":"science",
 		"type":"folder","path":"files\/science","items":[{"name":"file1","type":"file",
