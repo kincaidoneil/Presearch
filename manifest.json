@@ -13,6 +13,20 @@
 		"128": "icon-128.png"
 	},
 	"permissions": [
-		"storage"
+		"storage",
+		"tabs"
+	],
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": [
+				"js/jquery.min.js",
+				"js/jquery.tooltipster.min.js",
+				"js/tooltip.js"
+			],
+			"css" : [
+				"css/tooltipster.css"
+			]
+		}
 	]
 }
