@@ -4,57 +4,43 @@
 <script type="text/javascript" src="js/script.js"></script>
 
 <<<<<<< Updated upstream
-<!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Getting Started Extension's Popup</title>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: visible overflow;
-        overflow: hidden;
-        max-width: 3000px;
-      }
-    </style>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
-    <script src="popup.js"></script>
-  </head>
-  <body>
-    <div id="status">This is a lot of text lorem ipsum</div>
-  </body>
+	<title>Presearch</title>
+
+
+	<!-- Include our stylesheet -->
+	<link href="assets/css/styles.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+	<div class="filemanager">
+
+		<div class="search">
+			<input type="search" placeholder="Find a file.." />
+		</div>
+
+		<div class="breadcrumbs"></div>
+
+		<ul class="data"></ul>
+
+		<div class="nothingfound">
+			<div class="nofiles"></div>
+			<span>No files here.</span>
+		</div>
+
+	</div>
+
+	
+
+	<!-- Include our script files -->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="assets/js/script.js"></script>
+
+</body>
 </html>
-
-=======
-<style type="text/css">
-
-body, html {
-	width: 400px;
-	height: 400px;
-	margin: 0;
-	padding: 0;
-}
-
-</style>
-
-Hello world!
-
-<div id="declaration">
-	<h1>Loriem ipsum if this is some text then I don't know the answer to this question but wait it isn't a question...</h1>
-</div>
->>>>>>> Stashed changes
