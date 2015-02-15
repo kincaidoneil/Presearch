@@ -1,5 +1,3 @@
-//alert("testsalfkajsd;lfkjas;dflkjas;dlfkja");
-
 $(function(){
 
 	var filemanager = $('.filemanager'),

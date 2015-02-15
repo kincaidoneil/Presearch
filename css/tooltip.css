@@ -1,0 +1,17 @@
+.tooltipster-shadow {
+	box-shadow: 0px 0px 20px dimgray;
+}
+
+.tooltip {
+	
+}
+
+.tooltip h2 {
+	font-family: "Garamond", "Times New Roman", "serif";
+	font-weight: bold;
+}
+
+.tooltip h4 {
+	font-family: "Garamond", "Times New Roman", "serif";
+	font-weight: normal;
+}
