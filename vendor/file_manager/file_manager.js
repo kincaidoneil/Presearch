@@ -393,4 +393,8 @@ $(function(){
 		"type":"file","path":"http://www.nature.com","baseurl":"www.nature.com"}]},
 		{"name":"file1","type":"file","path":"http://www.mit.edu","baseurl":"www.mit.edu"},
 		{"name":"file2","type":"file","path":"http://www.umn.edu","baseurl":"www.umn.edu"}]});
+	
+	// Cuz the animations weren't working
+	$('.data').css({display: 'block'});
+	
 });
