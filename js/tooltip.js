@@ -23,7 +23,7 @@ $(document).ready(function() {
 			<\/div>';
 			// Set live data-bindings.
 			data = {
-				title: 'Hello world!',
+				title: $(origin).attr('href'),
 				url: $(origin).attr('href')
 			};
 			// Set content of tooltip.
