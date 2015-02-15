@@ -315,7 +315,7 @@ $(function(){
 						itemsLength = 'Empty';
 					}
 
-					var folder = $('<li class="folders"><a href="'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></a></li>');
+					var folder = $('<li class="folders"><a href="'+ f.path +'" title="'+ f.path +'" class="folders" target="_blank">'+icon+'<span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></a></li>');
 					folder.appendTo(fileList);
 				});
 
@@ -333,7 +333,7 @@ $(function(){
 
 					icon = '<span class="icon file f-'+fileType+'">.'+fileType+'</span>';
 
-					var file = $('<li class="files"><a href="'+ f.path +'" title="'+ f.path +'" class="files">'+icon+'<span class="name">'+ name +'</span> <span class="details">'+f.baseurl+'</span></a></li>');
+					var file = $('<li class="files"><a href="'+ f.path +'" title="'+ f.path +'" class="files" target="_blank">'+icon+'<span class="name">'+ name +'</span> <span class="details">'+f.baseurl+'</span></a></li>');
 					file.appendTo(fileList);
 				});
 
@@ -359,7 +359,7 @@ $(function(){
 					var name = u.split('/');
 
 					if (i !== breadcrumbsUrls.length - 1) {
-						url += '<a href="'+u+'"><span class="folderName">' + name[name.length-1] + '</span></a> <span class="arrow">→</span> ';
+						url += '<a href="'+u+'" target="_blank"><span class="folderName">' + name[name.length-1] + '</span></a> <span class="arrow">→</span> ';
 					}
 					else {
 						url += '<span class="folderName">' + name[name.length-1] + '</span>';
@@ -387,5 +387,5 @@ $(function(){
 
 	}
 	// Get json_data somehow...
-	process({"name":"files","type":"folder","path":"files","items":[{"name":"dir1","type":"folder","path":"files\/dir1","items":[{"name":"file1","type":"file","path":"files\/dir1\/file1","baseurl":"www.google.com"},{"name":"file2","type":"file","path":"files\/dir1\/file2","baseurl":"www.nature.com"}]},{"name":"file1","type":"file","path":"files\/file1","baseurl":"www.mit.edu"},{"name":"file2","type":"file","path":"files\/file2","baseurl":"www.umn.edu"}]});
+	process({"name":"files","type":"folder","path":"files","items":[{"name":"science","type":"folder","path":"files\/science","items":[{"name":"file1","type":"file","path":"http://www.google.com","baseurl":"www.google.com"},{"name":"file2","type":"file","path":"http://www.nature.com","baseurl":"www.nature.com"}]},{"name":"file1","type":"file","path":"www.mit.edu","baseurl":"www.mit.edu"},{"name":"file2","type":"file","path":"www.umn.edu","baseurl":"www.umn.edu"}]});
 });
