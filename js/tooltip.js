@@ -5,7 +5,7 @@ $(document).ready(function() {
 	$('a').tooltipster({
 		arrow: true,
 		contentAsHTML: true,
-		delay: 250, // Set ms before tooltip is displayed.
+		delay: 500, // Set ms before tooltip is displayed.
 		position: 'right',
 		interactive: true,
 		interactiveTolerance: 150, // Set ms before fade out after no activity.
@@ -13,7 +13,6 @@ $(document).ready(function() {
 		functionInit: function(origin, content) {
 			// Create template for tooltip.
 			var template = '<div class="tooltip">\
-				<h2>{{title}}<\/h2>\
 				<a href="{{url}}">\
 					<h4>Visit Page<\/h4>\
 				<\/a>\
