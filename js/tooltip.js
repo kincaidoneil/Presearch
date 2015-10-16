@@ -13,7 +13,7 @@ $(document).ready(function() {
 		functionInit: function(origin, content) {
 			// Create template for tooltip.
 			var template = '<div class="tooltip">\
-				<a href="{{url}}">\
+				<a href="{{url}}" target="_blank">\
 					<h4>Visit Page<\/h4>\
 				<\/a>\
 				<a id="addButton">\
