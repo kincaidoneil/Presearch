@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
 	var data = {};
-	
+	var list = {};
 	$('a').tooltipster({
 		arrow: true,
 		contentAsHTML: true,
@@ -35,7 +35,9 @@ $(document).ready(function() {
 				console.log("click recognized");
   		 		chrome.runtime.sendMessage({greeting: "ourthing"},function(response){
 				console.log("message sent.");
+				//list.push({{url}});
 				});
+				//document.getElementById(body).innerHTML = list{};
 	});
 		}
 	});
